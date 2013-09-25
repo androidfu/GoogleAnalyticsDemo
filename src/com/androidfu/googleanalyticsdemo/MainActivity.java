@@ -10,7 +10,7 @@ import com.androidfu.library.googleanalytics.AnalyticsUtils;
 
 public class MainActivity extends Activity {
 
-    private static final String GOOGLE_ANALYTICS_KEY = "some key";
+    private static final String GOOGLE_ANALYTICS_KEY = "UA-30315955-1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
