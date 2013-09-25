@@ -10,13 +10,18 @@ import com.androidfu.library.googleanalytics.AnalyticsUtils;
 
 public class MainActivity extends Activity {
 
+    private static final String GOOGLE_ANALYTICS_KEY = "some key";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Setup Tracker with context and our key.
+        AnalyticsUtils.configure(getApplication(), GOOGLE_ANALYTICS_KEY);
+
         // Track PageView
-        AnalyticsUtils.getInstance(this).trackPageView("path");
+        AnalyticsUtils.getInstance().trackPageView("path");
 
         Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
@@ -25,7 +30,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
                 // Track Event
-                AnalyticsUtils.getInstance(getApplicationContext()).trackEvent("category", "action", "label", 0);
+                AnalyticsUtils.getInstance().trackEvent("category", "action", "label", 0);
 
             }
         });
