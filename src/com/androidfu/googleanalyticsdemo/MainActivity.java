@@ -10,15 +10,13 @@ import com.androidfu.library.googleanalytics.AnalyticsUtils;
 
 public class MainActivity extends Activity {
 
-    private static final String GOOGLE_ANALYTICS_KEY = "UA-30315955-1";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Setup Tracker with context and our key.
-        AnalyticsUtils.configure(getApplication(), GOOGLE_ANALYTICS_KEY);
+        //AnalyticsUtils.configure(getApplication(), GOOGLE_ANALYTICS_KEY);
 
         // Track PageView
         AnalyticsUtils.getInstance().trackPageView("path");
